@@ -17,14 +17,14 @@ for line in sys.stdin:
     # split file into line
     line = line.strip()
     # split the line into data
-    key,value = line.split('\t')
+    key, value1, value2 = line.split('\t')
     # add up
-    if key == 'temperature_average':
-        temperature_sum += float(value)
-        temperature_count += 1
-    elif key == 'pressure_average':
-        pressure_sum += float(value)
-        pressure_count += 1
+    if key == 'temperature_sum':
+        temperature_sum += float(value1)
+        temperature_count += float(value2)
+    elif key == 'pressure_sum':
+        pressure_sum += float(value1)
+        pressure_count += float(value2)
 
 
 print("temperature_average:%s" % (temperature_sum/temperature_count,))
