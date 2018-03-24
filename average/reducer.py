@@ -22,7 +22,7 @@ for line in sys.stdin:
     if key == 'temperature_average':
         temperature_sum += float(value)
         temperature_count += 1
-    elif key == 'pressure_sum':
+    elif key == 'pressure_average':
         pressure_sum += float(value)
         pressure_count += 1
 
