@@ -19,6 +19,9 @@ for line in sys.stdin:
     # split the line into data
     data = line.split(',')
     # add up
+    if len(data[1]) == 0 or len(data[2]) == 0:
+        count += -1
+        continue
     temperature_sum += float(data[2])
     pressure_sum += float(data[1])
 

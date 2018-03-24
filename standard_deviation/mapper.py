@@ -21,6 +21,9 @@ for line in sys.stdin:
     line = line.strip()
     # split the line into data
     data = line.split(',')
+    if len(data[1]) == 0 or len(data[2]) == 0:
+        count += -1
+        continue
     # add up
     temperature_sum += math.pow(float(data[2])-temperature_avg, 2)
     pressure_sum += math.pow(float(data[1])-pressure_avg, 2)

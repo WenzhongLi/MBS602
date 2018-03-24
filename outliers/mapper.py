@@ -19,6 +19,8 @@ for line in sys.stdin:
     # split the line into data
     data = line.split(',')
     # add up
+    if len(data[1]) == 0 or len(data[2]) == 0:
+        continue
     temperature = float(data[2])
     pressure = float(data[1])
     if abs(temperature - temperature_avg) > 3.0 * temperature_sd:
