@@ -1,0 +1,31 @@
+botpt
+temperature_avg = 3.02812018246
+pressure_avg = 2257.852058
+temperature_sd = 0.194243112075
+pressure_sd = 12.4024286882
+temperature_outliers_count:20957.0
+pressure_outliers_count:0.0
+
+gliders
+temperature_average:6.08830863674
+pressure_average:455.531993157
+temperature_standard_deviation:2.30826334615
+pressure_standard_deviation:301.519172663
+temperature_outliers_count:0.0
+pressure_outliers_count:0.0
+
+gliders312
+temperature_average:6.5713629025
+pressure_average:410.131656207
+temperature_standard_deviation:2.47924153785
+pressure_standard_deviation:299.793133822
+temperature_outliers_count:0.0
+pressure_outliers_count:0.0
+
+profilers
+temperature_average:7.59659513762
+pressure_average:113.337056269
+temperature_standard_deviation:2.12568579702
+pressure_standard_deviation:64.4964438456
+temperature_outliers_count:0.0
+pressure_outliers_count:0.0
