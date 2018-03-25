@@ -11,7 +11,7 @@ import math
 
 class Outlier(MRJob):
     def mapper_init(self):
-        f = open("/Users/wenzhongli/PycharmProjects/MBS602/MJresult.txt", 'r').readlines()
+        f = open("/home/yh608/homework2/MBS602/MJresult.txt", 'r').readlines()
         f = f[::-1]
         for i in range(4):
             data = f[i].rstrip().split(':')
@@ -65,7 +65,8 @@ class Outlier(MRJob):
             self.pressure_outliers_count = pressure_outliers_count
 
     def reducer_final(self):
-        f = open("/Users/wenzhongli/PycharmProjects/MBS602/MJresult.txt",'a')
+        f = open("/home/yh608/homework2/MBS602/MJresult.txt",'a')
+
         if self.temperature_outliers_count != 0:
             f.write("temperature_outliers_count:"+str(self.temperature_outliers_count)+"\n")
         if self.pressure_outliers_count != 0:

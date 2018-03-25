@@ -53,7 +53,7 @@ class Average(MRJob):
             self.pressure_average = pressure_sum / pressure_count
 
     def reducer_final(self):
-        f = open("/Users/wenzhongli/PycharmProjects/MBS602/MJresult.txt",'a')
+        f = open("/home/yh608/homework2/MBS602/MJresult.txt",'a')
         if self.temperature_average != 0:
             f.write("temperature_average:"+str(self.temperature_average)+"\n")
         if self.pressure_average != 0:

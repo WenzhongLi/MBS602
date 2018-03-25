@@ -11,7 +11,7 @@ import math
 
 class StandardDeviation(MRJob):
     def mapper_init(self):
-        f = open("/Users/wenzhongli/PycharmProjects/MBS602/MJresult.txt", 'r').readlines()
+        f = open("/home/yh608/homework2/MBS602/MJresult.txt", 'r').readlines()
         f = f[::-1]
         for i in range(2):
             data = f[i].rstrip().split(':')
@@ -73,7 +73,7 @@ class StandardDeviation(MRJob):
             self.pressure_standard_deviation = math.sqrt(pressure_sum / pressure_count)
 
     def reducer_final(self):
-        f = open("/Users/wenzhongli/PycharmProjects/MBS602/MJresult.txt",'a')
+        f = open("/home/yh608/homework2/MBS602/MJresult.txt",'a')
         if self.temperature_standard_deviation != 0:
             f.write("temperature_standard_deviation:"+str(self.temperature_standard_deviation)+"\n")
         if self.pressure_standard_deviation != 0:
