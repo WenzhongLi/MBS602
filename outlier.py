@@ -48,8 +48,8 @@ class Outlier(MRJob):
                 yield('pressure_outliers', pressure)
 
     def reducer_init(self):
-        self.temperature_outliers_count = 0.0
-        self.pressure_outliers_count = 0.0
+        self.temperature_outliers_count = -1.0
+        self.pressure_outliers_count = -1.0
 
     def reducer(self,key,occurrences):
         temperature_outliers_count = 0.0
@@ -66,9 +66,9 @@ class Outlier(MRJob):
     def reducer_final(self):
         f = open("/home/yh608/homework2/MBS602/MJresult.txt",'a')
 
-        if self.temperature_outliers_count != 0:
+        if self.temperature_outliers_count != -1:
             f.write("temperature_outliers_count:"+str(self.temperature_outliers_count)+"\n")
-        if self.pressure_outliers_count != 0:
+        if self.pressure_outliers_count != -1:
             f.write("pressure_outliers_count:"+str(self.pressure_outliers_count)+"\n")
         f.flush()
         f.close()
