@@ -54,13 +54,12 @@ class Outlier(MRJob):
     def reducer(self,key,occurrences):
         temperature_outliers_count = 0.0
         pressure_outliers_count = 0.0
-        # input comes from STDIN (standard input)
         if key == 'temperature_outliers':
-            temperature_outliers_count = len()
+            temperature_outliers_count = len(occurrences)
             yield ("temperature_outliers_count", temperature_outliers_count)
             self.temperature_outliers_count = temperature_outliers_count
         elif key == 'pressure_outliers':
-            pressure_outliers_count = len()
+            pressure_outliers_count = len(occurrences)
             yield ("pressure_outliers_count", pressure_outliers_count)
             self.pressure_outliers_count = pressure_outliers_count
 
@@ -77,4 +76,3 @@ class Outlier(MRJob):
 
 if __name__ == '__main__':
     Outlier.run()
-    # print(r.temperature_average, r.pressure_average)
